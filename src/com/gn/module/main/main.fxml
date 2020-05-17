@@ -1,0 +1,299 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.SVGPath?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+<?import javafx.scene.text.TextFlow?>
+
+<StackPane fx:id="root" prefHeight="963.0" prefWidth="1594.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.gn.module.main.Main">
+   <children>
+      <StackPane id="foreground" prefHeight="150.0" prefWidth="200.0" style="-fx-background-color: #00000048;">
+         <children>
+            <AnchorPane id="fore-content" prefHeight="617.0" prefWidth="1115.0" StackPane.alignment="CENTER">
+               <children>
+                  <StackPane id="custom-dialog" alignment="TOP_LEFT" minWidth="250.0" prefHeight="101.0" prefWidth="250.0" style="-fx-background-color: -foreground-color;" AnchorPane.leftAnchor="0.0" />
+               </children>
+            </AnchorPane>
+         </children>
+      </StackPane>
+      <StackPane style="-fx-background-color: -foreground-color;">
+         <children>
+            <HBox fx:id="main" prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <fx:include fx:id="drawer" source="drawer.fxml" />
+                  <VBox fx:id="content" layoutX="10.0" layoutY="10.0" prefHeight="200.0" prefWidth="100.0" styleClass="background-color" HBox.hgrow="ALWAYS">
+                     <children>
+                        <VBox>
+                           <children>
+                              <HBox id="bar" fx:id="barHeader" VBox.vgrow="ALWAYS">
+                                 <children>
+                                    <GridPane prefHeight="151.0" prefWidth="932.0" HBox.hgrow="ALWAYS">
+                                       <HBox.margin>
+                                          <Insets left="20.0" />
+                                       </HBox.margin>
+                                       <columnConstraints>
+                                          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="633.0" />
+                                          <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" minWidth="10.0" />
+                                       </columnConstraints>
+                                       <rowConstraints>
+                                          <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                                       </rowConstraints>
+                                       <children>
+                                          <Label fx:id="title" styleClass="h2" text="Dashboard" textFill="#0000008c">
+                                             <font>
+                                                <Font size="17.0" />
+                                             </font>
+                                          </Label>
+                                          <VBox alignment="CENTER_RIGHT" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1">
+                                             <children>
+                                                <HBox fx:id="searchBox" alignment="CENTER_LEFT" focusTraversable="true" maxHeight="200.0" maxWidth="280.0" minHeight="-Infinity" prefHeight="38.0" prefWidth="239.0" styleClass="box-search">
+                                                   <children>
+                                                      <Button id="btnSearch" fx:id="clear" alignment="CENTER" contentDisplay="GRAPHIC_ONLY" minHeight="-Infinity" mnemonicParsing="false" prefHeight="38.0" prefWidth="15.0" styleClass="btn-transparent" text="Button" HBox.hgrow="ALWAYS">
+                                                         <cursor>
+                                                            <Cursor fx:constant="HAND" />
+                                                         </cursor>
+                                                         <graphic>
+                                                            <SVGPath fx:id="searchIcon" content="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z" style="-fx-fill: -icon-color;" styleClass="icon" />
+                                                         </graphic>
+                                                      </Button>
+                                                      <TextField id="search" fx:id="search" minHeight="-Infinity" prefHeight="38.0" prefWidth="358.0" promptText="Search.." />
+                                                   </children>
+                                                </HBox>
+                                             </children>
+                                             <padding>
+                                                <Insets right="20.0" />
+                                             </padding>
+                                          </VBox>
+                                       </children>
+                                    </GridPane>
+                                 </children>
+                              </HBox>
+                           </children>
+                        </VBox>
+                        <StackPane prefHeight="150.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
+                           <children>
+                              <ScrollPane id="body" fx:id="body" fitToHeight="true" fitToWidth="true" prefHeight="200.0" prefWidth="200.0" StackPane.alignment="CENTER">
+                                 <content>
+                                    <TabPane prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE">
+                                      <tabs>
+                                        <Tab closable="false" disable="true" text="All" />
+                                        <Tab closable="false" text="Current">
+                                             <content>
+                                                <StackPane prefHeight="150.0" prefWidth="200.0">
+                                                   <children>
+                                                      <GridPane>
+                                                        <columnConstraints>
+                                                          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                        </columnConstraints>
+                                                        <rowConstraints>
+                                                          <RowConstraints maxHeight="191.0" minHeight="10.0" prefHeight="191.0" vgrow="SOMETIMES" />
+                                                          <RowConstraints maxHeight="119.0" minHeight="10.0" prefHeight="111.0" vgrow="SOMETIMES" />
+                                                            <RowConstraints minHeight="10.0" prefHeight="169.0" vgrow="SOMETIMES" />
+                                                          <RowConstraints minHeight="9.0" prefHeight="9.0" vgrow="SOMETIMES" />
+                                                        </rowConstraints>
+                                                         <children>
+                                                            <VBox alignment="CENTER_LEFT" style="-fx-border-width: 0 1 0 0; -fx-border-color: -light-gray;">
+                                                               <children>
+                                                                  <Label style="-fx-text-fill: -light-gray; -fx-font-weight: bold;" styleClass="h1" text="May" />
+                                                               </children>
+                                                               <GridPane.margin>
+                                                                  <Insets left="10.0" />
+                                                               </GridPane.margin>
+                                                            </VBox>
+                                                            <VBox spacing="50.0" GridPane.rowIndex="1">
+                                                               <GridPane.margin>
+                                                                  <Insets left="10.0" />
+                                                               </GridPane.margin>
+                                                               <children>
+                                                                  <TextFlow style="-fx-border-width: 0 1 0 0; -fx-border-color: -light-gray;">
+                                                                     <children>
+                                                                        <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: gray; -fx-font-weight: bold;" styleClass="h4" text="Visual Elements of User Interface Design" />
+                                                                     </children>
+                                                                  </TextFlow>
+                                                                  <Label text="Design" />
+                                                               </children>
+                                                            </VBox>
+                                                            <VBox alignment="CENTER_LEFT" spacing="10.0" style="-fx-border-width: 0 1 0 0; -fx-border-color: -light-gray;" GridPane.rowIndex="2">
+                                                               <children>
+                                                                  <Label style="-fx-text-fill: -text-color;" styleClass="h5" text="May 17, 2020" />
+                                                                  <VBox id="img1" alignment="CENTER" prefHeight="221.0" prefWidth="303.0">
+                                                                     <children>
+                                                                        <Label style="-fx-border-width: 4; -fx-border-color: white; -fx-font-weight: bold; -fx-text-fill: white;" text="Java">
+                                                                           <padding>
+                                                                              <Insets bottom="30.0" left="30.0" right="30.0" top="30.0" />
+                                                                           </padding>
+                                                                           <styleClass>
+                                                                              <String fx:value="h2" />
+                                                                              <String fx:value="title" />
+                                                                           </styleClass>
+                                                                        </Label>
+                                                                     </children></VBox>
+                                                                  <TextFlow prefHeight="110.0" prefWidth="304.0">
+                                                                     <children>
+                                                                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Programming Language" />
+                                                                     </children>
+                                                                     <padding>
+                                                                        <Insets bottom="30.0" left="30.0" right="30.0" top="30.0" />
+                                                                     </padding>
+                                                                  </TextFlow>
+                                                               </children>
+                                                               <padding>
+                                                                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                               </padding>
+                                                            </VBox>
+                                                            <VBox alignment="CENTER_LEFT" spacing="10.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                                               <children>
+                                                                  <Label styleClass="h5" text="August 19, 2020" />
+                                                                  <VBox id="img2" alignment="CENTER" prefHeight="221.0" prefWidth="303.0">
+                                                                     <children>
+                                                                        <Label style="-fx-border-width: 4; -fx-border-color: white; -fx-font-weight: bold; -fx-text-fill: white;" text="JavaFx Css">
+                                                                           <padding>
+                                                                              <Insets bottom="30.0" left="30.0" right="30.0" top="30.0" />
+                                                                           </padding>
+                                                                           <styleClass>
+                                                                              <String fx:value="h2" />
+                                                                              <String fx:value="rounded" />
+                                                                              <String fx:value="title" />
+                                                                           </styleClass>
+                                                                        </Label>
+                                                                     </children></VBox>
+                                                                  <TextFlow prefHeight="110.0" prefWidth="304.0">
+                                                                     <children>
+                                                                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Visual Elements of User Interface Design" />
+                                                                     </children>
+                                                                     <padding>
+                                                                        <Insets bottom="30.0" left="30.0" right="30.0" top="30.0" />
+                                                                     </padding>
+                                                                  </TextFlow>
+                                                               </children>
+                                                               <padding>
+                                                                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                               </padding>
+                                                            </VBox>
+                                                            <VBox alignment="CENTER_LEFT" spacing="10.0" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                                                               <children>
+                                                                  <Label styleClass="h5" text="October 09, 2020" />
+                                                                  <VBox id="img3" alignment="CENTER" prefHeight="221.0" prefWidth="303.0">
+                                                                     <children>
+                                                                        <Label style="-fx-border-width: 4; -fx-border-color: white; -fx-font-weight: bold; -fx-text-fill: white;" text="FXML">
+                                                                           <padding>
+                                                                              <Insets bottom="20.0" left="40.0" right="40.0" top="50.0" />
+                                                                           </padding>
+                                                                           <styleClass>
+                                                                              <String fx:value="h2" />
+                                                                              <String fx:value="triangle" />
+                                                                              <String fx:value="title" />
+                                                                           </styleClass>
+                                                                        </Label>
+                                                                     </children></VBox>
+                                                                  <TextFlow prefHeight="110.0" prefWidth="304.0">
+                                                                     <children>
+                                                                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Transformed documents" />
+                                                                     </children>
+                                                                     <padding>
+                                                                        <Insets bottom="30.0" left="30.0" right="30.0" top="30.0" />
+                                                                     </padding>
+                                                                  </TextFlow>
+                                                               </children>
+                                                               <padding>
+                                                                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                               </padding>
+                                                            </VBox>
+                                                            <VBox alignment="CENTER_LEFT" style="-fx-border-width: 0 1 0 0; -fx-border-color: -light-gray;" GridPane.columnIndex="1">
+                                                               <children>
+                                                                  <Label style="-fx-text-fill: -light-gray; -fx-font-weight: bold;" styleClass="h1" text="Aug" />
+                                                               </children>
+                                                               <GridPane.margin>
+                                                                  <Insets left="10.0" />
+                                                               </GridPane.margin>
+                                                            </VBox>
+                                                            <VBox alignment="CENTER_LEFT" layoutX="314.0" layoutY="10.0" style="-fx-border-width: 0 1 0 0; -fx-border-color: -light-gray;" GridPane.columnIndex="2">
+                                                               <children>
+                                                                  <Label style="-fx-text-fill: -light-gray; -fx-font-weight: bold;" styleClass="h1" text="Oct" />
+                                                               </children>
+                                                               <GridPane.margin>
+                                                                  <Insets left="10.0" />
+                                                               </GridPane.margin>
+                                                            </VBox>
+                                                            <VBox spacing="50.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                                               <GridPane.margin>
+                                                                  <Insets left="10.0" />
+                                                               </GridPane.margin>
+                                                               <children>
+                                                                  <TextFlow style="-fx-border-width: 0 1 0 0; -fx-border-color: -light-gray;">
+                                                                     <children>
+                                                                        <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: gray; -fx-font-weight: bold;" styleClass="h4" text="Object Oriented Programing in Java" />
+                                                                     </children>
+                                                                  </TextFlow>
+                                                                  <Label text="Programming" />
+                                                               </children>
+                                                            </VBox>
+                                                            <VBox spacing="50.0" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                                                               <GridPane.margin>
+                                                                  <Insets left="10.0" />
+                                                               </GridPane.margin>
+                                                               <children>
+                                                                  <TextFlow style="-fx-border-width: 0 1 0 0; -fx-border-color: -light-gray;">
+                                                                     <children>
+                                                                        <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: gray; -fx-font-weight: bold;" styleClass="h4" text="Organize Elements in a document" />
+                                                                     </children>
+                                                                  </TextFlow>
+                                                                  <Label text="Design" />
+                                                               </children>
+                                                            </VBox>
+                                                         </children>
+                                                      </GridPane>
+                                                   </children>
+                                                   <padding>
+                                                      <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                                                   </padding>
+                                                </StackPane>
+                                             </content>
+                                          </Tab>
+                                          <Tab closable="false" disable="true" text="Pending" />
+                                          <Tab closable="false" disable="true" text="Complited" />
+                                      </tabs>
+                                    </TabPane>
+                                 </content></ScrollPane>
+                           </children>
+                        </StackPane>
+                     </children>
+                  </VBox>
+               </children>
+               <styleClass>
+                  <String fx:value="border-top-1" />
+                  <String fx:value="border" />
+               </styleClass>
+            </HBox>
+         </children>
+      </StackPane>
+   </children>
+    <stylesheets>
+        <URL value="@../../theme/css/material-color.css" />
+        <URL value="@../../theme/css/skeleton.css" />
+        <URL value="@../../theme/css/bootstrap.css" />
+        <URL value="@../../theme/css/shape.css" />
+        <URL value="@../../theme/css/typographic.css" />
+        <URL value="@../../theme/css/helpers.css" />
+        <URL value="@../../theme/css/master.css" />
+    </stylesheets>
+</StackPane>

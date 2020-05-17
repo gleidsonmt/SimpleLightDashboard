@@ -1,0 +1,54 @@
+
+/*
+    Created on : 25/10/2018, 18:42:15
+    Author     : Gleidson Neves da Silveira
+    Samples styles
+*/
+
+.box-search {
+    -fx-border-color : -light-gray;
+}
+
+.box-search:hover {
+    -fx-border-color : -base;
+}
+
+.box-search .text-field {
+    -fx-border-color : transparent;
+}
+
+.tab-pane:top .tab-header-area .headers-region .tab:selected:top {
+    -fx-border-width : 0px;
+}
+
+.tab-pane:top .tab-header-area .tab-header-background {
+    -fx-border-width : 0px;
+}
+
+.tab-pane:top .tab-header-area .headers-region .tab:selected:top .tab-container .tab-label .text {
+    -fx-fill : -text-color;
+}
+
+.tab-pane:top .tab-header-area .headers-region .tab:top .tab-container .tab-label .text
+{
+    -fx-fill : -medium-gray;
+}
+
+#img1 {
+    -fx-background-image : url("../../theme/img/fore1.jpg");
+    -fx-background-size : cover;
+}
+
+#img2 {
+    -fx-background-image : url("../../theme/img/fore6.jpg");
+    -fx-background-size : cover;
+}
+
+#img3 {
+    -fx-background-image : url("../../theme/img/fore2.jpg");
+    -fx-background-size : cover;
+}
+
+.title .text {
+    -fx-font-family : 'Mechanization';
+}
