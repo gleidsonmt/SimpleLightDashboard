@@ -18,9 +18,6 @@
 
 <h1> Simple Light Dashboard </h1>
           
-## Preview on Youtube
-[![Youtube link](src/com/gn/media/img/firstScreenYoutube.png)](https://youtu.be/9Rf-x9hRaCU)
-
 <p align="center">
   <img src="src/com/gn/theme/img/SimpleLightGreen.jpg"  />
 </p>
